@@ -1,0 +1,146 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>Chemix - Draw Lab Diagrams. Simply.</title>
+  <meta name="description"
+    content="Chemix is a free online editor for drawing science lab diagrams and school experiment apparatus. Easy sketching for both students and teachers">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta charset="UTF-8" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ChemixLab">
+  <meta name="twitter:creator" content="@macduy">
+  <meta name="twitter:title" content="Chemix - Draw Lab Diagrams. Simply.">
+  <meta name="twitter:description" content="Chemix is a free online editor for drawing lab diagrams. Simple and intuitive, it is designed for students and pupils to help them draw diagrams of common laboratory equipment and lab setup of science experiments.">
+  <meta name="twitter:image" content="https://chemix.org/images/preview.png">
+
+  <!-- Facebook/OpenGraph stuff -->
+  <meta property="og:title" content="Chemix - Draw Lab Diagrams. Simply." />
+  <meta property="og:description" content="Chemix is a free online editor for drawing science lab diagrams and school experiment apparatus. Easy sketching for both students and teachers" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://chemix.org/images/preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="697" />
+  <meta property="og:image:height" content="350" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="images/32.png" sizes="32x32" />
+  <link rel="icon" href="images/192.png" sizes="192x192" />
+
+  <!-- Paper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/paper@0.12.11/dist/paper-core.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.2/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+
+  <script src="js/jquery-touch-punch.js" defer></script>
+
+  <!-- Bootstrap -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" as="style" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.15.0/dist/umd/popper.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" defer></script>
+
+  <!-- Pips -->
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui-slider-pips.min.css" />
+  <script type="text/javascript" src="js/jquery-ui-slider-pips.min.js" defer></script>
+
+  <!-- Toastr -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.css" as="style">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js"></script>
+
+  <!-- Remodal -->
+  <script>window.REMODAL_GLOBALS = { DEFAULTS: { hashTracking: false } };</script>
+  <!-- Don't defer until moving settings to main().-->
+  <script src="https://cdn.jsdelivr.net/npm/remodal@1.0.7/dist/remodal.min.js" defer></script>
+  <!-- Careful preloading this, it will override our custom styles. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remodal@1.0.7/dist/remodal-default-theme.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remodal@1.0.7/dist/remodal.css">
+
+  <!-- qTip -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/qtip2@3.0.3/dist/jquery.qtip.min.css" as="style">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qtip2@3.0.3/dist/jquery.qtip.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/qtip2@3.0.3/dist/jquery.qtip.min.js" defer></script>
+
+  <!-- Intro.JS -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/intro.js@2.9.3/minified/introjs.min.css" as="style" >
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js@2.9.3/minified/introjs.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/intro.js@2.9.3/intro.min.js" defer></script>
+
+  <!-- Simple Scrollbar -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/simplebar@5.2.1/dist/simplebar.css" as="style">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@5.2.1/dist/simplebar.css" as="style">
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@5.2.1/dist/simplebar.min.js" defer></script>
+
+  <!-- Font Awesome (icons) -->
+  <script src="https://kit.fontawesome.com/f2d6eed50a.js" crossorigin="anonymous"></script>
+
+  <!-- Chemicons (Custom icon font) -->
+  <link href="./chemicons.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&:wght@500&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Colorpicker -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-colorpicker@3.1.2/dist/js/bootstrap-colorpicker.min.js" integrity="sha256-c+GJ9gGGKyp7UWYfABYM7+2wkJtTzn9TwyKqNeLcLbQ=" crossorigin="anonymous" defer></script>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-colorpicker@3.1.2/dist/css/bootstrap-colorpicker.css" as="style" integrity="sha256-D7Ma0ISdlQQJiczdC7YVv3+IXlWjg/Dxc577h9NhQCA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-colorpicker@3.1.2/dist/css/bootstrap-colorpicker.css" integrity="sha256-D7Ma0ISdlQQJiczdC7YVv3+IXlWjg/Dxc577h9NhQCA=" crossorigin="anonymous">
+
+  <!-- Stripe -->
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <!-- IE11 Object.assign polyfill -->
+  <script src="https://cdn.jsdelivr.net/npm/es6-object-assign@1.1.0/dist/object-assign-auto.min.js"></script>
+
+  <!-- IE11 Fetch & Promise polyfill -->
+  <script src="https://cdn.jsdelivr.net/npm/unfetch@4.2.0/dist/unfetch.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
+
+  <!-- GA -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7716816-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-7716816-2');
+  </script>
+
+  <!-- Inline CSS loader -->
+  <style>
+    body { box-sizing: border-box;}
+    @keyframes c-inline-spinner-kf{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.c-inline-spinner,.c-inline-spinner:before{display:inline-block;width:25px;height:25px;transform-origin:50%;border:2px solid transparent;border-color:#888 #888 transparent transparent;border-radius:50%;content:"";animation:linear c-inline-spinner-kf .9s infinite;position:relative;vertical-align:inherit;line-height:inherit}.c-inline-spinner{top:2px;margin:0 3px}.c-inline-spinner:before{border-color:#888 #888 transparent transparent;position:absolute;left:-2px;top:-2px;border-style:solid}
+  </style>
+<link href="vendors~main.css" rel="stylesheet"><link href="styles.fe2b75d7ec1088960ea6.css" rel="stylesheet"></head>
+
+<body style="background: #dddddd; box-sizing: border-box; font-size: 10pt;">
+  <h1>
+    <img src="./images/200.png" height="80" width="80">
+    <b>Chemix</b> is an online editor for drawing lab diagrams and school experiment apparatus. Easy sketching for
+    both students and teachers.
+  </h1>
+
+  <div id="loading-message">
+    <h2><i class="c-inline-spinner" aria-hidden="true"></i>&nbsp;Loading&hellip;</h2>
+    <div>
+      If this takes too long, please check your internet connection.
+      You may also need to <a target="_blank" href="http://help.chemix.org/article/27-reload/">force-reload the page</a>.<br/><br/>
+      <b>If problems persist, contact <a target="_blank" href="mailto:support@chemix.org">support@chemix.org</a>.</b>
+    </div>
+  </div>
+
+  <!-- Main app is loaded into here, with React. See main.ts -->
+  <div id="app"></div>
+<script type="text/javascript" src="js/app.vendors~main~svg.js"></script><script type="text/javascript" src="js/app.vendors~main.js"></script><script type="text/javascript" src="js/app.main~svg.js"></script><script type="text/javascript" src="js/app.main.js"></script><script type="text/javascript" src="js/app.svg.js"></script></body>
+
+</html>
