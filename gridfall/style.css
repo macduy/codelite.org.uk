@@ -1,0 +1,33 @@
+body {
+    background: hsl(225 25% 90%);
+    font-size: 1.3em;
+    font-family: "Nunito", sans-serif;
+    color: hsl(225 25% 33%);
+}
+
+.central {
+    margin: 2em;
+    text-align: center;
+}
+
+.light {
+    color: hsl(225 25% 45%);
+}
+
+.image-logo {
+    max-width: 100%;
+    margin: 5em 0;
+}
+
+
+.ml-embedded {
+    margin-top: 5em auto 1em;
+    text-align: center;
+}
+
+/* Small screens */
+@media screen and (max-width:480px) {
+    .image-logo {
+        margin: 3em 0;
+    }
+}
